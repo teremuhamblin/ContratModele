@@ -1,0 +1,23 @@
+ContratModele
+Copyright 2026 [Votre Nom ou Pseudo GitHub]
+
+Ce dépôt est structuré sous un régime de double licence :
+
+1. PROJET GLOBAL (Racine, scripts, outillage, documentation technique)
+   Sauf mention contraire, le projet est distribué sous licence Apache 2.0
+   (voir le fichier LICENSE à la racine).
+
+2. MODÈLES DE CONTRATS (Dossier DOCS/)
+   Les modèles de contrats, annexes et clauses situés dans le dossier DOCS/
+   sont régis exclusivement par la licence spécifique définie dans DOCS/LICENSE.md
+   (Creative Commons Attribution 4.0 International avec permissions d'usage
+   contractuel).
+
+3. SOURCES TIERCES ET AVERTISSEMENT JURIDIQUE
+   Les réécritures, mises à jour juridiques, commentaires et la structuration
+   Markdown sont placés sous les licences ci-dessus. Les éventuels extraits
+   issus de modèles publics tiers restent soumis aux droits de leurs auteurs
+   respectifs (retrait sur simple demande via les Issues du dépôt).
+
+   AVERTISSEMENT : Ce projet est fourni « EN L'ÉTAT » à titre purement
+   informatif. Il ne constitue en aucun cas un conseil juridique.
