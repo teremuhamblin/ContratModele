@@ -54,3 +54,9 @@ Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une *Issue* ou 
 * Mettre à jour un modèle suite à une évolution légale ;
 
 * Proposer un nouveau modèle de contrat utile à la communauté (NDA, cession de droits, forfait, etc.).
+
+## ⚖️ Licences
+
+- **Projet global (structure, scripts, outillage)** : distribué sous licence **[Apache 2.0](LICENSE)** (voir également le fichier [NOTICE](NOTICE)).
+
+- **Modèles de contrats (`DOCS/`)** : distribués sous licence **[CC BY 4.0](DOCS/LICENSE.md)** avec **dispense d'attribution pour vos contrats signés** (vous pouvez les adapter et les utiliser commercialement avec vos clients sans mentionner `ContratModele`).
