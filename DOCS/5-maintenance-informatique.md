@@ -1,6 +1,8 @@
+> ⚠️ **Avertissement :** Modèle fourni à titre purement informatif (droit français). Il ne constitue pas un conseil juridique ; faites-le relire par un professionnel du droit avant signature.
+
 > **Note d'utilisation (à supprimer avant envoi) :**
 > - Contrat de **Tierce Maintenance Applicative (TMA)**, support utilisateurs et assistance technique pour progiciels ou logiciels métier (B2B).
-> - Remplacez **PRESTATAIRE** par le nom de votre société, **CLIENT** par le nom de la société cliente, et complétez les champs entre crochets `[...]`.
+> - Utilisez `python3 scripts/generate.py` ou remplacez chaque variable `{{...}}` par vos valeurs.
 > - Supprimez les sous-articles optionnels (ex : périphériques, hébergement) s'ils ne concernent pas votre activité.
 
 ---
@@ -9,14 +11,14 @@
 
 **Entre les soussignés :**
 
-La société **[Nom de la société cliente]**, [forme juridique, ex : SAS / SARL] au capital de **[Montant €]**, dont le siège social est situé **[Adresse complète]**, immatriculée au Registre du Commerce et des Sociétés de **[Ville]** sous le numéro **[Numéro RCS / SIREN]**, représentée par **[M./Mme Prénom et Nom]**, en qualité de **[Fonction]**, dûment habilité(e),  
+La société **{{CLIENT_RAISON_SOCIALE}}**, {{CLIENT_FORME_JURIDIQUE}} au capital de **{{CLIENT_CAPITAL_EUR}} €**, dont le siège social est situé **{{CLIENT_ADRESSE}}**, immatriculée au Registre du Commerce et des Sociétés de **{{CLIENT_RCS_VILLE}}** sous le numéro **{{CLIENT_SIREN}}**, représentée par **{{CLIENT_REPRESENTANT}}**, en qualité de **{{CLIENT_REPRESENTANT_FONCTION}}**, dûment habilité(e),  
 *(ci-après dénommée « **le CLIENT** »)*,
 
 **d'une part,**
 
 **et**
 
-La société **[Nom de la société prestataire]**, [forme juridique, ex : SAS / SASU / SARL / EURL] au capital de **[Montant €]**, dont le siège social est situé **[Adresse complète]**, immatriculée au Registre du Commerce et des Sociétés de **[Ville]** sous le numéro **[Numéro RCS / SIREN]**, représentée par **[M./Mme Prénom et Nom]**, en qualité de **[Fonction]**, dûment habilité(e),  
+La société **{{PRESTATAIRE_NOM}}**, {{PRESTATAIRE_FORME_JURIDIQUE}} au capital de **{{PRESTATAIRE_CAPITAL_EUR}} €**, dont le siège social est situé **{{PRESTATAIRE_ADRESSE}}**, immatriculée au Registre du Commerce et des Sociétés de **{{PRESTATAIRE_RCS_VILLE}}** sous le numéro **{{PRESTATAIRE_SIREN}}**, représentée par **{{PRESTATAIRE_REPRESENTANT}}**, en qualité de **{{PRESTATAIRE_REPRESENTANT_FONCTION}}**, dûment habilité(e),  
 *(ci-après dénommée « **le PRESTATAIRE** »)*,
 
 **d'autre part,**
@@ -41,8 +43,8 @@ Le présent contrat a pour objet de définir les conditions dans lesquelles le P
 
 | Site (implantation géographique) | Logiciel(s) / Module(s) couvert(s) | Configuration / Nombre de licences ou utilisateurs |
 | :--- | :--- | :--- |
-| **[Ex : Siège social – Paris]** | **[Nom du logiciel / version]** | **[Ex : 10 postes / SaaS / Serveur dédié]** |
-| **[Autre site éventuel]** | **[Nom du logiciel / version]** | **[Configuration]** |
+| **{{SITE_1_NOM}}** | **{{SITE_1_LOGICIELS}}** | **{{SITE_1_CONFIGURATION}}** |
+| **{{SITE_2_NOM}}** | **{{SITE_2_LOGICIELS}}** | **{{SITE_2_CONFIGURATION}}** |
 
 Un site est caractérisé par son implantation géographique. Le CLIENT s'engage à utiliser un nombre de licences ou d'accès au plus égal à celui prévu au présent contrat. Un avenant ou un nouveau contrat sera établi en cas d'évolution substantielle de cette configuration (le CLIENT étant tenu d'en informer le PRESTATAIRE), d'acquisition d'un module supplémentaire ou d'arrêt d'utilisation d'un logiciel listé.
 
@@ -78,10 +80,10 @@ Lorsque le logiciel est hébergé sur l'infrastructure du CLIENT, ce dernier s'e
 ### 4.1 Modalités de prise en charge
 Les demandes d'assistance des utilisateurs concernent l'usage courant des logiciels couverts (blocage, erreur applicative, question de paramétrage courant) dans leur version en cours ou la version immédiatement précédente (N-1).
 
-Les demandes sont transmises via **[le portail de tickets / l'adresse e-mail support@XXXX / par téléphone]**.  
-Le service est ouvert du lundi au vendredi, de **[9h00 à 12h30 et de 14h00 à 17h30]**, hors jours fériés et fermetures exceptionnelles notifiées à l'avance.
+Les demandes sont transmises via **{{CANAL_SUPPORT}}** *(ex : portail de tickets, e-mail support@domaine.fr, téléphone)*.  
+Le service est ouvert du lundi au vendredi, de **{{HORAIRES_SUPPORT}}** *(ex : 9h00 à 12h30 et 14h00 à 17h30)*, hors jours fériés et fermetures exceptionnelles notifiées à l'avance.
 
-Les demandes sont enregistrées et le PRESTATAIRE intervient dans les meilleurs délais selon le degré de criticité, à titre indicatif en moyenne sous **[2 heures ouvrées]** et au maximum sous **[2 jours ouvrés]** pour une première prise en charge. Le PRESTATAIRE se réserve le droit d'orienter le CLIENT vers la documentation ou la base de connaissances lorsque la réponse s'y trouve.
+Les demandes sont enregistrées et le PRESTATAIRE intervient dans les meilleurs délais selon le degré de criticité, à titre indicatif en moyenne sous **{{SLA_MOYEN_PRISE_EN_CHARGE}}** *(ex : 2 heures ouvrées)* et au maximum sous **{{SLA_MAX_PRISE_EN_CHARGE}}** *(ex : 2 jours ouvrés)* pour une première prise en charge. Le PRESTATAIRE se réserve le droit d'orienter le CLIENT vers la documentation ou la base de connaissances lorsque la réponse s'y trouve.
 
 ### 4.2 Télémaintenance
 Le présent contrat inclut les interventions par télémaintenance (prise en main à distance sécurisée) destinées à diagnostiquer l'incident ou assister l'utilisateur, sans frais de licence supplémentaire pour l'outil utilisé par le PRESTATAIRE.
@@ -105,7 +107,7 @@ Le nombre de demandes d'assistance n'est pas plafonné a priori, mais le PRESTAT
 
 ## Article 5 – Prestations complémentaires *(Optionnelles)*
 
-- **5.1 Accès à l'Espace Client :** Le PRESTATAIRE met à disposition du CLIENT un accès sécurisé à son espace client en ligne (*[URL]*), permettant de consulter les documentations, notes de version, guides pratiques et de suivre les tickets d'incident.
+- **5.1 Accès à l'Espace Client :** Le PRESTATAIRE met à disposition du CLIENT un accès sécurisé à son espace client en ligne (**{{URL_ESPACE_CLIENT}}**), permettant de consulter les documentations, notes de version, guides pratiques et de suivre les tickets d'incident.
 - **5.2 Adaptations et développements spécifiques :** Toute évolution spécifique (rapports sur mesure, connecteurs API, tableaux de bord personnalisés) fait l'objet d'une étude préalable, d'un devis chiffré et d'un calendrier dédié.
 - **5.3 Matériels et périphériques *(le cas échéant)* :** Les matériels ou périphériques éventuellement fournis par le PRESTATAIRE bénéficient des conditions de garantie du constructeur décrites en annexe spécifique.
 - **5.4 Hébergement Cloud / SaaS *(le cas échéant)* :** Lorsque les logiciels et données du CLIENT sont hébergés via le PRESTATAIRE ou son partenaire d'infrastructure, les niveaux de service (SLA) et conditions d'hébergement sont précisés en annexe dédiée.
@@ -139,7 +141,7 @@ Le nombre de demandes d'assistance n'est pas plafonné a priori, mais le PRESTAT
 
 **8.1 Obligation de moyens et réactivité :** Le PRESTATAIRE est soumis à une obligation de moyens. Il s'engage à mobiliser du personnel qualifié et les outils adaptés pour traiter les demandes du CLIENT dans les meilleurs délais.
 
-**8.2 Confidentialité :** Chaque Partie s'engage à garder strictement confidentielles toutes les informations et données de l'autre Partie dont elle aurait connaissance à l'occasion du présent contrat, pendant toute sa durée et pendant **[cinq (5) ans]** après son expiration. Le CLIENT autorise toutefois le PRESTATAIRE à accéder aux fichiers nécessaires au diagnostic et à la résolution des incidents.
+**8.2 Confidentialité :** Chaque Partie s'engage à garder strictement confidentielles toutes les informations et données de l'autre Partie dont elle aurait connaissance à l'occasion du présent contrat, pendant toute sa durée et pendant **{{DUREE_CONFIDENTIALITE_ANS}} ans** *(ex : 5 ans)* après son expiration. Le CLIENT autorise toutefois le PRESTATAIRE à accéder aux fichiers nécessaires au diagnostic et à la résolution des incidents.
 
 **8.3 Obligation de vigilance sociale :** Conformément aux articles L. 8222-1 et D. 8222-5 du Code du travail (pour tout contrat d'un montant annuel d'au moins 5 000 € HT), le PRESTATAIRE fournit au CLIENT sur demande, à la signature puis tous les six (6) mois, son attestation de vigilance URSSAF à jour et un justificatif d'immatriculation (Kbis / RNE).
 
@@ -160,24 +162,24 @@ Le prix annuel de la maintenance et de l'assistance technique est calculé par s
 
 | Site | Prestation / Logiciel | Prix annuel HT (€) | TVA (€) | Prix annuel TTC (€) |
 | :--- | :--- | :--- | :--- | :--- |
-| **[Site 1]** | **[Maintenance + AT]** | **[Montant €]** | **[TVA]** | **[Montant €]** |
-| **TOTAL** | | **[Total HT €]** | **[Total TVA]** | **[Total TTC €]** |
+| **{{SITE_1_NOM}}** | **{{SITE_1_PRESTATION_LIBELLE}}** | **{{REDEVANCE_SITE_1_HT}} €** | **{{REDEVANCE_SITE_1_TVA}} €** | **{{REDEVANCE_SITE_1_TTC}} €** |
+| **TOTAL** | | **{{REDEVANCE_TOTAL_HT}} €** | **{{REDEVANCE_TOTAL_TVA}} €** | **{{REDEVANCE_TOTAL_TTC}} €** |
 
 La première année, le montant est calculé au *prorata temporis* du nombre de mois couverts. Le contrat prend effet à compter de sa signature *(ou de la réception du règlement initial)*. La redevance annuelle est facturée en début de période (pour la période du 1er janvier au 31 décembre, ou à date anniversaire).
 
 ### 10.2 Tarifs des prestations complémentaires (hors forfait)
 Sauf devis particulier, les tarifs unitaires applicables aux prestations hors forfait décrites à l'Article 5 sont les suivants pour l'année en cours :
-- **Journée de prestation / régie :** **[XXX € HT / jour]**
-- **Taux horaire d'intervention :** **[XXX € HT / heure]**
-- **Téléformation à distance :** **[XXX € HT / heure]**
-- **Hébergement *(le cas échéant)* :** **[XXX € HT / utilisateur / an]**
+- **Journée de prestation / régie :** **{{TJM_HT}} € HT / jour**
+- **Taux horaire d'intervention :** **{{TAUX_HORAIRE_HT}} € HT / heure**
+- **Téléformation à distance :** **{{TARIF_TELEFORMATION_HEURE_HT}} € HT / heure**
+- **Hébergement *(le cas échéant)* :** **{{TARIF_HEBERGEMENT_UTILISATEUR_AN_HT}} € HT / utilisateur / an**
 
 ### 10.3 Révision annuelle des prix
 Les prix sont révisables chaque année à la date d'échéance anniversaire, sur la base de l'évolution de l'**indice Syntec** *(selon la formule : $P_1 = P_0 \times \frac{S_1}{S_0}$, où $S_0$ est le dernier indice Syntec publié à la signature et $S_1$ le dernier indice publié à la date de révision)*.  
 *(Option alternative : Toute modification tarifaire supérieure à l'évolution de l'indice Syntec sera notifiée par écrit au CLIENT au moins quatre (4) mois avant l'échéance annuelle afin de lui permettre, en cas de refus, de résilier le contrat dans le respect du préavis prévu à l'Article 11).*
 
 ### 10.4 Modalités de paiement et retards
-Les factures sont payables par virement bancaire dans un délai maximum de **[30 jours — ou 45 jours maximum selon L. 441-10 C. com.]** à compter de la date d'émission de la facture.
+Les factures sont payables par virement bancaire dans un délai maximum de **{{DELAI_PAIEMENT_JOURS}} jours** *(30 jours ou 45 jours maximum selon L. 441-10 C. com.)* à compter de la date d'émission de la facture.
 
 Conformément aux articles L. 441-10 et D. 441-5 du Code de commerce, tout retard de paiement entraîne de plein droit, sans rappel préalable, l'application de pénalités de retard au taux BCE majoré de 10 points (minimum 3 fois le taux d'intérêt légal) ainsi qu'une indemnité forfaitaire de recouvrement de **40 €** par facture impayée. En outre, passé un délai de huit (8) jours après mise en demeure restée sans effet, le PRESTATAIRE pourra suspendre l'exécution de la maintenance et de l'assistance technique jusqu'au complet règlement.
 
@@ -185,7 +187,7 @@ Conformément aux articles L. 441-10 et D. 441-5 du Code de commerce, tout retar
 
 ## Article 11 – Durée, renouvellement, résiliation et cession
 
-**11.1 Durée et renouvellement :** Le présent contrat est conclu pour une durée initiale d'un (1) an *(du **[JJ/MM/AAAA]** au **[JJ/MM/AAAA]**)*. *(Dans le cas où une prestation d'hébergement logiciel est souscrite, la durée initiale est portée à **[trois (3) ans]**).*  
+**11.1 Durée et renouvellement :** Le présent contrat est conclu pour une durée initiale d'un (1) an *(du **{{DATE_DEBUT}}** au **{{DATE_FIN}}**)*. *(Dans le cas où une prestation d'hébergement logiciel est souscrite, la durée initiale est portée à **{{DUREE_INITIALE_HEBERGEMENT_ANS}} ans**).*  
 À l'issue de la période initiale, le contrat se renouvelle d'année en année par **tacite reconduction**, sauf dénonciation par l'une ou l'autre des Parties dans les conditions ci-après. *(S'agissant d'un contrat conclu entre professionnels pour les besoins de leur activité, les dispositions du Code de la consommation relatives aux particuliers ne sont pas applicables).*
 
 **11.2 Résiliation à l'échéance :** Chaque Partie peut résilier le présent contrat à son échéance par lettre recommandée avec accusé de réception (LRAR), moyennant le respect d'un préavis de **trois (3) mois** *(porté à **six (6) mois** si le contrat inclut une prestation d'hébergement)*. En cas de résiliation, le PRESTATAIRE cesse toute maintenance, livraison de mise à jour et accès à l'espace client au terme effectif du contrat.
@@ -208,13 +210,13 @@ Conformément à l'article 1218 du Code civil, aucune Partie ne pourra être ten
 
 Le présent contrat et ses annexes sont soumis au **droit français**.
 
-En cas de différend portant sur la validité, l'interprétation ou l'exécution du présent contrat, les Parties s'engagent à rechercher préalablement et de bonne foi une solution amiable dans un délai de trente (30) jours. À défaut de règlement amiable, tout litige sera soumis à la compétence exclusive du **Tribunal de commerce de [Ville]**, sans préjudice pour chaque Partie de solliciter en urgence toute mesure conservatoire devant la juridiction compétente.
+En cas de différend portant sur la validité, l'interprétation ou l'exécution du présent contrat, les Parties s'engagent à rechercher préalablement et de bonne foi une solution amiable dans un délai de trente (30) jours. À défaut de règlement amiable, tout litige sera soumis à la compétence exclusive du **Tribunal de commerce de {{TRIBUNAL_COMPETENT}}**, sans préjudice pour chaque Partie de solliciter en urgence toute mesure conservatoire devant la juridiction compétente.
 
 ---
 
-Fait à **[Ville]**, en deux (2) exemplaires originaux *(ou signé électroniquement)*, le **[Date]**.
+Fait à **{{VILLE_SIGNATURE}}**, en deux (2) exemplaires originaux *(ou signé électroniquement)*, le **{{DATE_SIGNATURE}}**.
 
-| Pour le **CLIENT** | Pour le **PRESTATAIRE** |
+| Pour le **CLIENT** ({{CLIENT_RAISON_SOCIALE}}) | Pour le **PRESTATAIRE** ({{PRESTATAIRE_NOM}}) |
 | :--- | :--- |
-| *Nom et qualité :* | *Nom et qualité :* |
+| *Nom et qualité :* {{CLIENT_REPRESENTANT}} — {{CLIENT_REPRESENTANT_FONCTION}} | *Nom et qualité :* {{PRESTATAIRE_REPRESENTANT}} — {{PRESTATAIRE_REPRESENTANT_FONCTION}} |
 | *Signature (et cachet le cas échéant) :* | *Signature :* |
