@@ -1,7 +1,9 @@
+> ⚠️ **Avertissement :** Modèle fourni à titre purement informatif (droit français). Il ne constitue pas un conseil juridique ; faites-le relire par un professionnel du droit avant signature.
+
 > **Mode d'emploi de ce document (à supprimer avant envoi) :**
 > Ce document est un **modèle pédagogique complet de contrat de prestation de services**.
 > - Les blocs encadrés (`> 💡 ...`) vous expliquent **l'utilité, les risques et les options** de chaque clause : **ne les copiez pas dans votre contrat final**.
-> - Conservez uniquement le texte des articles dont vous avez besoin, remplacez les champs `[...]` par vos valeurs et ne gardez qu'une seule option lorsqu'un choix est proposé.
+> - Conservez uniquement le texte des articles dont vous avez besoin, remplacez les champs `{{...}}` via `python3 scripts/generate.py` (ou manuellement) et ne gardez qu'une seule option lorsqu'un choix est proposé.
 
 ---
 
@@ -13,10 +15,10 @@
 **Entre les soussignés :**
 
 *(Option 1 – Prestataire en société)*  
-La société **[Nom de la société prestataire]**, [forme juridique, ex : SASU / EURL] au capital de **[Montant €]**, ayant son siège social au **[Adresse complète]**, immatriculée au RCS de **[Ville]** sous le n° **[Numéro RCS / SIREN]**, représentée par **[M./Mme Prénom et Nom]**, en qualité de **[Président / Gérant]**,  
+La société **{{PRESTATAIRE_NOM}}**, {{PRESTATAIRE_FORME_JURIDIQUE}} au capital de **{{PRESTATAIRE_CAPITAL_EUR}} €**, ayant son siège social au **{{PRESTATAIRE_ADRESSE}}**, immatriculée au RCS de **{{PRESTATAIRE_RCS_VILLE}}** sous le n° **{{PRESTATAIRE_SIREN}}**, représentée par **{{PRESTATAIRE_REPRESENTANT}}**, en qualité de **{{PRESTATAIRE_REPRESENTANT_FONCTION}}**,  
 
 *(Option 2 – Prestataire en Entreprise Individuelle / Micro-entreprise)*  
-**[M./Mme Prénom et Nom]**, entrepreneur individuel exerçant sous le nom commercial **[Nom commercial, le cas échéant]**, domicilié(e) professionnellement au **[Adresse complète]**, immatriculé(e) sous le n° SIRET **[Numéro SIRET]**,  
+**{{PRESTATAIRE_REPRESENTANT}}**, entrepreneur individuel exerçant sous le nom commercial **{{PRESTATAIRE_NOM}}**, domicilié(e) professionnellement au **{{PRESTATAIRE_ADRESSE}}**, immatriculé(e) sous le n° SIRET **{{PRESTATAIRE_SIRET}}**,  
 
 *(ci-après dénommé(e) « **le Prestataire** »)*,
 
@@ -24,7 +26,7 @@ La société **[Nom de la société prestataire]**, [forme juridique, ex : SASU 
 
 **Et**
 
-La société **[Nom de la société cliente]**, [forme juridique, ex : SAS / SARL] au capital de **[Montant €]**, ayant son siège social au **[Adresse complète]**, immatriculée au RCS de **[Ville]** sous le n° **[Numéro RCS / SIREN]**, représentée par **[M./Mme Prénom et Nom]**, en qualité de **[Fonction]**, dûment habilité(e),  
+La société **{{CLIENT_RAISON_SOCIALE}}**, {{CLIENT_FORME_JURIDIQUE}} au capital de **{{CLIENT_CAPITAL_EUR}} €**, ayant son siège social au **{{CLIENT_ADRESSE}}**, immatriculée au RCS de **{{CLIENT_RCS_VILLE}}** sous le n° **{{CLIENT_SIREN}}**, représentée par **{{CLIENT_REPRESENTANT}}**, en qualité de **{{CLIENT_REPRESENTANT_FONCTION}}**, dûment habilité(e),  
 *(ci-après dénommée « **le Client** »)*,
 
 **d'autre part.**
@@ -37,7 +39,7 @@ La société **[Nom de la société cliente]**, [forme juridique, ex : SAS / SAR
 > Rappelez ici en quelques lignes le contexte du projet et les raisons qui motivent l'accord intervenu. En cas de litige futur sur l'interprétation d'une clause ambiguë, le juge s'appuiera sur ce préambule pour comprendre la commune intention des parties.
 
 Il a été préalablement exposé que :  
-**[Décrire en 3 à 5 lignes l'activité du Client, son besoin, et le contexte dans lequel le Prestataire est sollicité.]**
+**{{CONTEXTE_PREAMBULE}}** *(décrire en 3 à 5 lignes l'activité du Client, son besoin, et le contexte dans lequel le Prestataire est sollicité).*
 
 Ceci exposé, il a été convenu ce qui suit :
 
@@ -48,7 +50,7 @@ Ceci exposé, il a été convenu ce qui suit :
 > 💡 **Explication `[INDISPENSABLE]`**
 > Définissez aussi précisément que possible la prestation attendue (étude, audit, développement, expertise, accompagnement). Si la description technique est longue, renvoyez vers un cahier des charges en annexe afin d'éviter toute dérive de périmètre (*scope creep*).
 
-Le présent contrat a pour objet la réalisation par le Prestataire de la mission de conseil et de prestation informatique suivante : **[décrire précisément la mission]** *(ou : la mission définie au cahier des charges figurant en Annexe du présent contrat et en faisant partie intégrante)*.
+Le présent contrat a pour objet la réalisation par le Prestataire de la mission de conseil et de prestation informatique suivante : **{{OBJET_MISSION}}** *(ou : la mission définie au cahier des charges figurant en Annexe du présent contrat et en faisant partie intégrante)*.
 
 ---
 
@@ -62,23 +64,23 @@ Le présent contrat a pour objet la réalisation par le Prestataire de la missio
 > **Attention légale :** Entre professionnels (art. L. 441-10 et D. 441-5 du Code de commerce), le délai de paiement ne peut pas dépasser 60 jours à compter de la date d'émission de la facture (ou 45 jours fin de mois), et **la mention des pénalités de retard et de l'indemnité forfaitaire de 40 € est obligatoire**.
 
 **Option 1 – Prix forfaitaire :**  
-En contrepartie de la réalisation des prestations définies à l'Article 1, le Client versera au Prestataire la somme forfaitaire de **[Montant] € HT**, majorée de la TVA en vigueur *(ou « TVA non applicable, art. 293 B du CGI »)*, ventilée de la manière suivante :
-- **[20 ou 30 % – Montant € HT]** à la signature des présentes ;
-- **[30 ou 40 % – Montant € HT]** à **[l'étape intermédiaire / à J+X suivant la signature]** ;
-- **[le solde – Montant € HT]** à la réception des livrables finaux.
+En contrepartie de la réalisation des prestations définies à l'Article 1, le Client versera au Prestataire la somme forfaitaire de **{{MONTANT_FORFAIT_HT}} € HT**, majorée de la TVA en vigueur *(ou « TVA non applicable, art. 293 B du CGI »)*, ventilée de la manière suivante :
+- **{{ACOMPTE_ECHEANCE_1}}** *(ex : 20 ou 30 % – Montant € HT)* à la signature des présentes ;
+- **{{ACOMPTE_ECHEANCE_2}}** *(ex : 30 ou 40 % – Montant € HT)* à **{{JALON_ECHEANCE_2}}** *(ex : l'étape intermédiaire / J+X suivant la signature)* ;
+- **{{SOLDE_ECHEANCE_3}}** *(ex : le solde – Montant € HT)* à la réception des livrables finaux.
 
 *(Clause d'indexation optionnelle pour les contrats longs ou pluriannuels, utilisant par exemple l'indice Syntec :)*  
-Les montants prévus seront révisés selon la formule : $P = P_0 \times \left(\frac{I}{I_0}\right)$, où $P$ est le prix révisé, $P_0$ le prix de base, $I$ le dernier indice **[Syntec]** publié à la date de révision, et $I_0$ l'indice connu à la date de prise d'effet du contrat.
+Les montants prévus seront révisés selon la formule : $P = P_0 \times \left(\frac{I}{I_0}\right)$, où $P$ est le prix révisé, $P_0$ le prix de base, $I$ le dernier indice **{{INDICE_REVISION}}** *(ex : Syntec)* publié à la date de révision, et $I_0$ l'indice connu à la date de prise d'effet du contrat.
 
 **Option 2 – Prix en régie (à la journée) :**  
-Les prestations définies à l'Article 1 seront facturées au Client sur la base d'un tarif journalier de **[Montant] € HT par jour** *(majoré de la TVA en vigueur)*, pour un volume estimé de **[Nombre]** journées maximum *(modifiable par accord écrit des parties)*, facturé mensuellement sur la base d'un Compte Rendu d'Activité (CRA).  
-*(Facultatif :)* Une rémunération variable de **[X %]** assise sur **[indicateur objectif et quantifiable]** s'ajoutera en cas d'atteinte des objectifs convenus.
+Les prestations définies à l'Article 1 seront facturées au Client sur la base d'un tarif journalier de **{{TJM_HT}} € HT par jour** *(majoré de la TVA en vigueur)*, pour un volume estimé de **{{JOURS_MAX}}** journées maximum *(modifiable par accord écrit des parties)*, facturé mensuellement sur la base d'un Compte Rendu d'Activité (CRA).  
+*(Facultatif :)* Une rémunération variable de **{{REMUNERATION_VARIABLE_PCT}}** *(ex : X %)* assise sur **{{INDICATEUR_VARIABLE}}** *(indicateur objectif et quantifiable)* s'ajoutera en cas d'atteinte des objectifs convenus.
 
 **Frais annexes (commun aux deux options) :**  
 Les frais spécifiques engagés par le Prestataire (déplacement, hébergement, repas, licences ou achats dédiés) nécessaires à l'exécution de la prestation en dehors de son lieu d'exercice habituel seront facturés en sus au Client au réel, sur présentation de justificatifs et sous réserve de l'accord préalable et écrit du Client.
 
 **Modalités de règlement et pénalités de retard (commun aux deux options) :**  
-Les factures sont payables par virement bancaire dans un délai de **[30 jours]** à compter de leur date d'émission. Conformément aux articles L. 441-10 et D. 441-5 du Code de commerce, tout retard de paiement entraîne de plein droit, sans rappel préalable, l'exigibilité de pénalités de retard calculées au taux d'intérêt appliqué par la Banque Centrale Européenne (BCE) à son opération de refinancement la plus récente majoré de 10 points de pourcentage (sans pouvoir être inférieur à 3 fois le taux d'intérêt légal), ainsi qu'une indemnité forfaitaire pour frais de recouvrement de **40 €** par facture impayée. À défaut de règlement huit (8) jours après mise en demeure restée sans effet, le Prestataire pourra suspendre ses prestations jusqu'au complet paiement.
+Les factures sont payables par virement bancaire dans un délai de **{{DELAI_PAIEMENT_JOURS}} jours** à compter de leur date d'émission. Conformément aux articles L. 441-10 et D. 441-5 du Code de commerce, tout retard de paiement entraîne de plein droit, sans rappel préalable, l'exigibilité de pénalités de retard calculées au taux d'intérêt appliqué par la Banque Centrale Européenne (BCE) à son opération de refinancement la plus récente majoré de 10 points de pourcentage (sans pouvoir être inférieur à 3 fois le taux d'intérêt légal), ainsi qu'une indemnité forfaitaire pour frais de recouvrement de **40 €** par facture impayée. À défaut de règlement huit (8) jours après mise en demeure restée sans effet, le Prestataire pourra suspendre ses prestations jusqu'au complet paiement.
 
 ---
 
@@ -87,7 +89,7 @@ Les factures sont payables par virement bancaire dans un délai de **[30 jours]*
 > 💡 **Explication `[INDISPENSABLE – à relier à l'Article 5]`**
 > Au forfait, la durée correspond souvent au calendrier de livraison. En régie, fixez une date de fin ou un plafond de jours, avec possibilité de renouvellement par avenant écrit.
 
-Le présent contrat prend effet le **[Date]** et est conclu pour une durée de **[durée, ex : 6 mois]** *(ou jusqu'au **[Date]** / jusqu'à la réception complète des livrables)*. Il pourra être prolongé ou renouvelé par accord écrit (avenant) entre les parties.
+Le présent contrat prend effet le **{{DATE_DEBUT}}** et est conclu pour une durée de **{{DUREE_MISSION}}** *(ex : 6 mois)*, soit jusqu'au **{{DATE_FIN}}** *(ou jusqu'à la réception complète des livrables)*. Il pourra être prolongé ou renouvelé par accord écrit (avenant) entre les parties.
 
 ---
 
@@ -100,7 +102,7 @@ Le présent contrat prend effet le **[Date]** et est conclu pour une durée de *
 
 Le Prestataire s'engage à mener à bien la tâche précisée à l'Article 1, conformément aux règles de l'art, en toute indépendance dans l'organisation de ses moyens et sans lien de subordination vis-à-vis du Client.
 
-À cet effet, il affecte les compétences *(ou l'équipe décrite en Annexe, dont toute modification substantielle nécessitera l'information ou l'accord préalable du Client)* nécessaires à la réalisation de la mission et remet, le cas échéant, une pré-étude au plus tard le **[Date]**. Il sollicitera du Client tous les éléments nécessaires à la bonne menée de la mission, notamment dans le cadre des points de suivi ou du comité de pilotage convenus entre les parties.
+À cet effet, il affecte les compétences *(ou l'équipe décrite en Annexe, dont toute modification substantielle nécessitera l'information ou l'accord préalable du Client)* nécessaires à la réalisation de la mission et remet, le cas échéant, une pré-étude au plus tard le **{{DATE_PRE_ETUDE}}**. Il sollicitera du Client tous les éléments nécessaires à la bonne menée de la mission, notamment dans le cadre des points de suivi ou du comité de pilotage convenus entre les parties.
 
 ---
 
@@ -110,9 +112,9 @@ Le Prestataire s'engage à mener à bien la tâche précisée à l'Article 1, co
 > Un calendrier clair protège les deux parties. Attention toutefois : en tant que Prestataire, assurez-vous que les délais dépendent bien du respect par le Client de ses propres délais de fourniture d'accès et de validation !
 
 Sous réserve du respect par le Client de ses obligations de collaboration et de validation dans les délais convenus, le calendrier prévisionnel est le suivant :
-- La **Phase 1** définie au cahier des charges devra être achevée au plus tard le **[Date]** ;
-- La **Phase 2**, assortie de la remise du pré-rapport / livrable intermédiaire, devra être achevée au plus tard le **[Date]** ;
-- La **Phase 3** et les livrables finaux devront être délivrés au plus tard le **[Date]**.
+- La **Phase 1** définie au cahier des charges devra être achevée au plus tard le **{{DATE_PHASE_1}}** ;
+- La **Phase 2**, assortie de la remise du pré-rapport / livrable intermédiaire, devra être achevée au plus tard le **{{DATE_PHASE_2}}** ;
+- La **Phase 3** et les livrables finaux devront être délivrés au plus tard le **{{DATE_PHASE_3}}**.
 
 Tout retard imputable au Client ou relevant de la force majeure entraîne automatiquement un décalage équivalent de ce calendrier.
 
@@ -137,7 +139,7 @@ Pour l'accomplissement des diligences et prestations prévues à l'Article 1, le
 
 Chacune des parties considérera comme strictement confidentiels, et s'interdit de divulguer à des tiers sans accord écrit préalable, toute information, document, donnée ou concept de nature technique, commerciale ou financière dont elle pourra avoir connaissance à l'occasion du présent contrat. Pour l'application de la présente clause, chaque partie se porte fort (article 1204 du Code civil) du respect de cette obligation par ses salariés et sous-traitants autorisés.
 
-Toutefois, aucune partie ne saurait être tenue responsable d'une divulgation si les éléments en cause étaient déjà dans le domaine public à la date de la divulgation, étaient déjà licitement connus d'elle avant la signature du contrat, ont été obtenus de tiers par des moyens légitimes, ou doivent être communiqués en vertu d'une obligation légale. Cette obligation perdurera pendant **[cinq (5) ans]** après le terme du contrat.
+Toutefois, aucune partie ne saurait être tenue responsable d'une divulgation si les éléments en cause étaient déjà dans le domaine public à la date de la divulgation, étaient déjà licitement connus d'elle avant la signature du contrat, ont été obtenus de tiers par des moyens légitimes, ou doivent être communiqués en vertu d'une obligation légale. Cette obligation perdurera pendant **{{DUREE_CONFIDENTIALITE_ANS}} ans** *(ex : 5 ans)* après le terme du contrat.
 
 ---
 
@@ -157,7 +159,7 @@ Pour mener à bien la mission prise en charge, le Client accordera au Prestatair
 > 💡 **Explication `[FACULTATIF – vivement recommandé]`**
 > Dans une mission de conseil ou d'IT, le Client ne peut pas rester passif : il doit vous fournir les accès, répondre à vos questions et désigner un interlocuteur décisionnaire. Sans cela, vous ne pouvez pas tenir vos délais.
 
-Le Client tiendra à la disposition du Prestataire toutes les informations, accès et validations pouvant contribuer à la bonne réalisation de l'objet du présent contrat. À cette fin, le Client désigne un interlocuteur privilégié décisionnaire (**[M./Mme Prénom Nom, fonction]**) pour assurer le dialogue et le suivi dans les diverses étapes de la mission.
+Le Client tiendra à la disposition du Prestataire toutes les informations, accès et validations pouvant contribuer à la bonne réalisation de l'objet du présent contrat. À cette fin, le Client désigne un interlocuteur privilégié décisionnaire (**{{CLIENT_INTERLOCUTEUR_PROJET}}**) pour assurer le dialogue et le suivi dans les diverses étapes de la mission.
 
 ---
 
@@ -166,7 +168,7 @@ Le Client tiendra à la disposition du Prestataire toutes les informations, acc�
 > 💡 **Explication `[FACULTATIF – indispensable au forfait]`**
 > La réception (recette) est l'acte par lequel le Client reconnaît que le livrable est conforme. Elle déclenche souvent le paiement du solde ou le passage à la phase suivante. **Astuce cruciale pour le Prestataire :** ajoutez toujours un délai au bout duquel le silence du Client vaut acceptation tacite, pour éviter qu'un Client ne bloque votre facture indéfiniment !
 
-À la date prévue pour chaque jalon *(et notamment le **[Date]** pour le pré-rapport ou livrable intermédiaire)*, le Prestataire remettra le livrable correspondant au Client, qui disposera d'un délai de **[10 jours ouvrés]** pour formuler ses réserves motivées par écrit ou prononcer sa validation afin que la phase suivante puisse être engagée. À défaut de réserves écrites et motivées dans ce délai, le livrable sera réputé accepté sans réserve.
+À la date prévue pour chaque jalon *(et notamment le **{{DATE_LIVRABLE_INTERMEDIAIRE}}** pour le pré-rapport ou livrable intermédiaire)*, le Prestataire remettra le livrable correspondant au Client, qui disposera d'un délai de **{{DELAI_RECETTE_JOURS}} jours ouvrés** pour formuler ses réserves motivées par écrit ou prononcer sa validation afin que la phase suivante puisse être engagée. À défaut de réserves écrites et motivées dans ce délai, le livrable sera réputé accepté sans réserve.
 
 ---
 
@@ -175,7 +177,7 @@ Le Client tiendra à la disposition du Prestataire toutes les informations, acc�
 > 💡 **Explication `[FACULTATIF]`**
 > Utile si vous intervenez avec une équipe ou des collaborateurs que vous ne voulez pas voir débauchés par le Client. Pour être valable devant les tribunaux français, cette clause doit être **proportionnée** dans le temps (12 à 24 mois maximum) et limitée aux collaborateurs ayant participé au projet (la limiter uniquement aux collaborateurs impliqués est plus sûr juridiquement que « tout collaborateur présent ou futur »).
 
-Sauf accord écrit et préalable du Prestataire, le Client s'interdit d'engager ou de faire travailler directement ou indirectement tout collaborateur du Prestataire ayant participé à l'exécution du présent contrat, même si la sollicitation initiale émane dudit collaborateur. La présente clause produira ses effets pendant toute l'exécution du contrat et pendant **[douze (12) mois]** *(ou vingt-quatre (24) mois)* à compter de sa cessation. En cas de non-respect, le Client versera au Prestataire une indemnité forfaitaire égale à **[12 mois]** de rémunération brute du collaborateur concerné, charges sociales patronales incluses.
+Sauf accord écrit et préalable du Prestataire, le Client s'interdit d'engager ou de faire travailler directement ou indirectement tout collaborateur du Prestataire ayant participé à l'exécution du présent contrat, même si la sollicitation initiale émane dudit collaborateur. La présente clause produira ses effets pendant toute l'exécution du contrat et pendant **{{DUREE_NON_SOLLICITATION_MOIS}} mois** *(ex : 12 ou 24 mois)* à compter de sa cessation. En cas de non-respect, le Client versera au Prestataire une indemnité forfaitaire égale à **{{PENALITE_NON_SOLLICITATION_MOIS}} mois** de rémunération brute du collaborateur concerné, charges sociales patronales incluses.
 
 ---
 
@@ -231,7 +233,7 @@ En tout état de cause (sauf faute lourde ou dolosive), quels que soient le fond
 > 💡 **Explication `[FACULTATIF]`**
 > Le Client peut demander des pénalités en cas de retard de livraison. Si vous les acceptez en tant que Prestataire, exigez deux garde-fous : qu'elles ne s'appliquent **que si le retard vient exclusivement de vous**, et qu'elles soient **plafonnées** (par exemple à 5 % ou 10 % du prix total).
 
-Tout dépassement des délais impératifs stipulés à l'Article 5 exclusivement imputable au Prestataire *(à l'exclusion de tout retard du Client ou cas de force majeure)* entraînera, après mise en demeure restée infructueuse pendant huit (8) jours, l'application d'une pénalité de **[Montant € — ex : 0,5 % du montant HT de la phase en retard]** par jour calendaire de retard, dans la limite d'un **plafond cumulé de [5 % ou 10 %]** du montant total HT du contrat.
+Tout dépassement des délais impératifs stipulés à l'Article 5 exclusivement imputable au Prestataire *(à l'exclusion de tout retard du Client ou cas de force majeure)* entraînera, après mise en demeure restée infructueuse pendant huit (8) jours, l'application d'une pénalité de **{{PENALITE_RETARD_JOURNALIERE}}** *(ex : 0,5 % du montant HT de la phase en retard)* par jour calendaire de retard, dans la limite d'un **plafond cumulé de {{PLAFOND_PENALITES_RETARD_PCT}} %** *(ex : 5 ou 10)* du montant total HT du contrat.
 
 ---
 
@@ -252,10 +254,10 @@ Tout manquement grave de l'une ou l'autre des parties aux obligations essentiell
 > Utile dans un contrat en régie / à durée indéterminée pour permettre à chaque partie de sortir proprement moyennant un préavis. En revanche, dans un contrat au **forfait** avec un objectif ferme, ne l'ajoutez pas (ou prévoyez une indemnité de dédit pour couvrir le travail déjà engagé).
 
 **Option 1 – Résiliation avec préavis (adapté à la régie / mission continue) :**  
-Le présent contrat pourra être résilié à tout moment par chacune des parties, sous réserve d'un préavis écrit de **[trois (3) semaines / trente (30) jours]**. Dans cette hypothèse, les sommes correspondant aux prestations déjà réalisées jusqu'à la fin du préavis demeureront acquises au Prestataire et le Client pourra faire usage des livrables déjà remis et payés.
+Le présent contrat pourra être résilié à tout moment par chacune des parties, sous réserve d'un préavis écrit de **{{PREAVIS_RESILIATION_JOURS}} jours** *(ex : 21 ou 30 jours)*. Dans cette hypothèse, les sommes correspondant aux prestations déjà réalisées jusqu'à la fin du préavis demeureront acquises au Prestataire et le Client pourra faire usage des livrables déjà remis et payés.
 
 **Option 2 – Départ d'un intervenant clé :**  
-Dans le cas où **[M./Mme Nom de l'intervenant clé]** viendrait à être dans l'impossibilité définitive d'exécuter la mission sans faute du Prestataire, les parties se rapprocheront pour convenir d'un remplacement ; à défaut d'accord, le contrat pourra être résilié avec un préavis d'un (1) mois, les phases ou jours réalisés restant dus.
+Dans le cas où **{{INTERVENANT_CLE_NOM}}** viendrait à être dans l'impossibilité définitive d'exécuter la mission sans faute du Prestataire, les parties se rapprocheront pour convenir d'un remplacement ; à défaut d'accord, le contrat pourra être résilié avec un préavis d'un (1) mois, les phases ou jours réalisés restant dus.
 
 ---
 
@@ -264,7 +266,7 @@ Dans le cas où **[M./Mme Nom de l'intervenant clé]** viendrait à être dans l
 > 💡 **Explication `[FACULTATIF]`**
 > Choisissez l'option adaptée à votre situation (ne gardez qu'une seule option !).
 
-- **Option A (Sous-traitance autorisée pour un tiers identifié) :** Les tâches précisées à l'Article 1 concernant **[les phases X et Y]** pourront être exécutées par la société **[Nom du sous-traitant]**, en qualité de sous-traitant, ce que reconnaît et accepte le Client. Le Prestataire demeure seul responsable envers le Client de la bonne exécution des prestations sous-traitées.
+- **Option A (Sous-traitance autorisée pour un tiers identifié) :** Les tâches précisées à l'Article 1 concernant **{{PHASES_SOUS_TRAITEES}}** pourront être exécutées par la société **{{SOUS_TRAITANT_NOM}}**, en qualité de sous-traitant, ce que reconnaît et accepte le Client. Le Prestataire demeure seul responsable envers le Client de la bonne exécution des prestations sous-traitées.
 - **Option B (Sous-traitance soumise à accord) :** Le Prestataire ne pourra sous-traiter tout ou partie des prestations définies à l'Article 1 qu'avec l'accord préalable et écrit du Client, et demeurera en tout état de cause pleinement responsable de leur exécution.
 - **Option C (Sous-traitance interdite) :** Le présent contrat étant conclu en considération des compétences propres du Prestataire, celui-ci s'interdit de sous-traiter à quiconque la réalisation des travaux définis à l'Article 1.
 
@@ -343,7 +345,7 @@ En cas de différend relatif au présent contrat, les parties s'engagent à rech
 
 Le présent contrat est soumis au **droit français**.
 
-À défaut d'accord amiable dans les conditions de l'Article 25, tout litige susceptible de s'élever entre les parties à propos de la formation, de l'exécution, de l'interprétation ou de la résiliation du présent contrat sera de la compétence exclusive du **Tribunal de commerce de [Ville]** *(entre sociétés commerciales)*.
+À défaut d'accord amiable dans les conditions de l'Article 25, tout litige susceptible de s'élever entre les parties à propos de la formation, de l'exécution, de l'interprétation ou de la résiliation du présent contrat sera de la compétence exclusive du **Tribunal de commerce de {{TRIBUNAL_COMPETENT}}** *(entre sociétés commerciales)*.
 
 ---
 
@@ -353,7 +355,7 @@ Le présent contrat est soumis au **droit français**.
 > L'arbitrage offre confidentialité et rapidité pour des litiges industriels complexes, mais il coûte **très cher** (honoraires des arbitres et frais administratifs à la charge des parties). Pour une mission de freelance ou de PME, préférez l'Article 26 (Tribunal de commerce). Notez que depuis 2016 (art. 2061 C. civ.), l'arbitrage est ouvert aux contrats conclus à raison d'une activité professionnelle, et est régi par les articles 1442 et suivants du **Code de procédure civile** (et non plus « nouveau » code de procédure civile).
 
 *(Clause à n'utiliser qu'en remplacement de l'Article 26 si vous optez pour l'arbitrage :)*  
-Tout litige susceptible de s'élever entre les parties sera tranché conformément au règlement de conciliation et d'arbitrage de **[Nom de l'institution arbitrale]**.
+Tout litige susceptible de s'élever entre les parties sera tranché conformément au règlement de conciliation et d'arbitrage de **{{INSTITUTION_ARBITRALE}}**.
 
 ---
 
@@ -366,9 +368,9 @@ Les parties conviennent que le présent contrat pourra être signé par voie él
 
 ---
 
-Fait à **[Ville]**, le **[Date]**, en deux (2) exemplaires originaux *(ou signé électroniquement)*.
+Fait à **{{VILLE_SIGNATURE}}**, le **{{DATE_SIGNATURE}}**, en deux (2) exemplaires originaux *(ou signé électroniquement)*.
 
-| Pour le **Client** | Pour le **Prestataire** |
+| Pour le **Client** ({{CLIENT_RAISON_SOCIALE}}) | Pour le **Prestataire** ({{PRESTATAIRE_NOM}}) |
 | :--- | :--- |
-| *Nom et qualité (personne habilitée) :* | *Nom et qualité (personne habilitée) :* |
+| *Nom et qualité :* {{CLIENT_REPRESENTANT}} — {{CLIENT_REPRESENTANT_FONCTION}} | *Nom et qualité :* {{PRESTATAIRE_REPRESENTANT}} — {{PRESTATAIRE_REPRESENTANT_FONCTION}} |
 | *Signature :* | *Signature :* |
