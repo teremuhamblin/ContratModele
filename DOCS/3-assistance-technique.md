@@ -1,7 +1,9 @@
+> ⚠️ **Avertissement :** Modèle fourni à titre purement informatif (droit français). Il ne constitue pas un conseil juridique ; faites-le relire par un professionnel du droit avant signature.
+
 > **Note d'utilisation (à supprimer avant envoi) :**
 > - Contrat-cadre d'Assistance Technique (A.T.) B2B fonctionnant par **annexes (bons de commande)**, adapté aux prestations réalisées par un PRESTATAIRE disposant éventuellement de collaborateurs ou d'une équipe.
 > - Source historique d'origine (1998) : http://lthoumyre.chez.com/pro/1/ctra19980702.htm#2a — *entièrement actualisé au regard du droit français en vigueur*.
-> - Remplacez **PRESTATAIRE** et **CLIENT** par les dénominations respectives des sociétés, et complétez les champs entre crochets `[...]`.
+> - Utilisez `python3 scripts/generate.py` ou remplacez chaque variable `{{...}}` par vos valeurs.
 
 ---
 
@@ -9,12 +11,12 @@
 
 **Entre les soussignés :**
 
-La société **[Nom de la société cliente]**, [forme juridique, ex : SAS / SA / SARL] au capital de **[Montant €]**, dont le siège social est situé au **[Adresse complète]**, immatriculée au Registre du Commerce et des Sociétés de **[Ville]** sous le numéro **[Numéro RCS / SIREN]**, représentée par **[M./Mme Nom et Prénom]**, en qualité de **[Fonction]**, dûment habilité(e) aux fins des présentes,  
+La société **{{CLIENT_RAISON_SOCIALE}}**, {{CLIENT_FORME_JURIDIQUE}} au capital de **{{CLIENT_CAPITAL_EUR}} €**, dont le siège social est situé au **{{CLIENT_ADRESSE}}**, immatriculée au Registre du Commerce et des Sociétés de **{{CLIENT_RCS_VILLE}}** sous le numéro **{{CLIENT_SIREN}}**, représentée par **{{CLIENT_REPRESENTANT}}**, en qualité de **{{CLIENT_REPRESENTANT_FONCTION}}**, dûment habilité(e) aux fins des présentes,  
 *(ci-après désignée « **le CLIENT** »)*,
 
 **d'une part, et**
 
-La société **[Nom de la société prestataire]**, [forme juridique, ex : SAS / SARL / EURL] au capital de **[Montant €]**, dont le siège social est situé au **[Adresse complète]**, immatriculée au Registre du Commerce et des Sociétés de **[Ville]** sous le numéro **[Numéro RCS / SIREN]** *(ou numéro SIRET)*, représentée par **[M./Mme Nom et Prénom]**, en qualité de **[Fonction]**, dûment habilité(e) aux fins des présentes,  
+La société **{{PRESTATAIRE_NOM}}**, {{PRESTATAIRE_FORME_JURIDIQUE}} au capital de **{{PRESTATAIRE_CAPITAL_EUR}} €**, dont le siège social est situé au **{{PRESTATAIRE_ADRESSE}}**, immatriculée au Registre du Commerce et des Sociétés de **{{PRESTATAIRE_RCS_VILLE}}** sous le numéro **{{PRESTATAIRE_SIREN}}** *(ou numéro SIRET)*, représentée par **{{PRESTATAIRE_REPRESENTANT}}**, en qualité de **{{PRESTATAIRE_REPRESENTANT_FONCTION}}**, dûment habilité(e) aux fins des présentes,  
 *(ci-après désignée « **le PRESTATAIRE** »)*,
 
 **d'autre part,**
@@ -43,7 +45,7 @@ Les obligations du PRESTATAIRE consistent à faire bénéficier le CLIENT de son
 
 ## Article 3 – Durée du contrat
 
-Le présent contrat prend effet à compter de sa date de signature par les Parties pour une durée de **[1 an / indéterminée / correspondant à l'exécution des annexes signées]**, sauf résiliation anticipée dans les conditions prévues à l'Article 13.
+Le présent contrat prend effet à compter de sa date de signature par les Parties pour une durée de **{{DUREE_CONTRAT_CADRE}}** *(ex : 1 an / indéterminée / correspondant à l'exécution des annexes signées)*, sauf résiliation anticipée dans les conditions prévues à l'Article 13.
 
 Si les prestations d'une mission doivent débuter après la date de signature du présent contrat, les Parties en indiquent la date de démarrage et la durée prévisionnelle dans l'annexe correspondante.
 
@@ -92,7 +94,7 @@ Des réunions ou points d'avancement pourront se tenir régulièrement, à la de
 
 Ces points d'avancement donnent lieu à l'établissement d'un compte rendu (ou Compte Rendu d'Activité mensuel) par le responsable désigné par le PRESTATAIRE, transmis au responsable du CLIENT.
 
-Faute de remarques ou de réserves motivées formulées par écrit par le CLIENT dans un délai de **quinze (15) jours** *(ou [X] jours ouvrés)* à compter de la transmission du compte rendu, celui-ci est réputé approuvé et vaut validation des prestations exécutées pour la période correspondante.
+Faute de remarques ou de réserves motivées formulées par écrit par le CLIENT dans un délai de **{{DELAI_VALIDATION_CRA_JOURS}} jours** *(ex : 15 jours calendaires ou 5 jours ouvrés)* à compter de la transmission du compte rendu, celui-ci est réputé approuvé et vaut validation des prestations exécutées pour la période correspondante.
 
 ---
 
@@ -162,7 +164,7 @@ Chaque Partie s'interdit de divulguer ou de communiquer à quiconque, directemen
 
 Chaque Partie se porte fort, au sens de l'article **1204 du Code civil**, du respect du présent engagement de confidentialité par ses salariés, dirigeants, mandataires ou sous-traitants dûment autorisés.
 
-La présente obligation de confidentialité perdurera pendant toute la durée du contrat et pendant **[cinq (5) ans]** après son terme ou sa résiliation.
+La présente obligation de confidentialité perdurera pendant toute la durée du contrat et pendant **{{DUREE_CONFIDENTIALITE_ANS}} ans** *(ex : 5 ans)* après son terme ou sa résiliation.
 
 ---
 
@@ -184,37 +186,37 @@ En cas de manquement grave par l'une des Parties à l'une de ses obligations con
 * **Non-validité partielle :** Si une ou plusieurs stipulations du présent contrat sont tenues pour non valides ou déclarées nulles en application d'une loi ou d'une décision de justice définitive, les autres stipulations garderont toute leur force et leur portée. Les Parties s'efforceront alors de remplacer la clause invalidée par une stipulation valide d'effet économique et juridique équivalent.
 * **Intégralité du contrat :** Le présent contrat et ses annexes expriment l'intégralité de l'accord des Parties relativement à son objet et annulent et remplacent tout accord, échange ou proposition antérieurs. Toute modification devra faire l'objet d'un avenant écrit signé par les deux Parties.
 * **Élection de domicile :** Pour l'exécution des présentes et de leurs suites, chaque Partie fait élection de domicile en son siège social tel qu'indiqué en tête des présentes.
-* **Loi applicable et attribution de compétence :** Le présent contrat est régi par le droit français. Tout différend relatif à sa validité, son interprétation, son exécution ou sa résiliation qui n'aurait pu être résolu à l'amiable dans un délai de trente (30) jours sera soumis à la compétence exclusive du **Tribunal de commerce de [Ville]**.
+* **Loi applicable et attribution de compétence :** Le présent contrat est régi par le droit français. Tout différend relatif à sa validité, son interprétation, son exécution ou sa résiliation qui n'aurait pu être résolu à l'amiable dans un délai de trente (30) jours sera soumis à la compétence exclusive du **Tribunal de commerce de {{TRIBUNAL_COMPETENT}}**.
 
 ---
 
-Fait à **[Ville]**, le **[Date]**, en deux (2) exemplaires originaux *(ou signé électroniquement)*.
+Fait à **{{VILLE_SIGNATURE}}**, le **{{DATE_SIGNATURE}}**, en deux (2) exemplaires originaux *(ou signé électroniquement)*.
 
-| Pour le **PRESTATAIRE** | Pour le **CLIENT** |
+| Pour le **PRESTATAIRE** ({{PRESTATAIRE_NOM}}) | Pour le **CLIENT** ({{CLIENT_RAISON_SOCIALE}}) |
 | :--- | :--- |
-| *Nom et qualité :* | *Nom et qualité :* |
+| *Nom et qualité :* {{PRESTATAIRE_REPRESENTANT}} — {{PRESTATAIRE_REPRESENTANT_FONCTION}} | *Nom et qualité :* {{CLIENT_REPRESENTANT}} — {{CLIENT_REPRESENTANT_FONCTION}} |
 | *Signature :* | *Signature :* |
 
 ---
 ---
 
-# Annexe n° [1] – Conditions particulières (Bon de commande)
+# Annexe n° {{ANNEXE_NUMERO}} – Conditions particulières (Bon de commande)
 
-*La présente annexe fait partie intégrante du contrat-cadre d'assistance technique signé le **[Date du contrat-cadre]** entre le CLIENT et le PRESTATAIRE.*
+*La présente annexe fait partie intégrante du contrat-cadre d'assistance technique signé le **{{DATE_CONTRAT_CADRE}}** entre le CLIENT et le PRESTATAIRE.*
 
 | Rubrique | Détails de la mission |
 | :--- | :--- |
-| **Objet et description de la prestation** | [Décrire le projet, les technologies et le périmètre de l'assistance technique] |
-| **Intervenant(s) / Profil(s) affecté(s)** | [Nom, Prénom ou profil de l'intervenant] |
-| **Responsables désignés** | **Côté CLIENT :** [Nom, fonction, e-mail] <br> **Côté PRESTATAIRE :** [Nom, fonction, e-mail] |
-| **Lieu d'exécution** | [Locaux du CLIENT à (Adresse) / Locaux du PRESTATAIRE / Hybride : X jours sur site, X jours en télétravail] |
-| **Dates et volume prévisionnel** | **Date de début :** [JJ/MM/AAAA] <br> **Date de fin prévisionnelle :** [JJ/MM/AAAA] <br> **Volume estimé :** [Nombre] jours |
-| **Conditions financières** | **Tarif journalier :** [Montant] € HT / jour <br> **Frais refacturables :** [Aucun / Selon Article 7.1 sur accord préalable] |
-| **Conditions particulières additionnelles** | [Néant / Préciser tout élément spécifique] |
+| **Objet et description de la prestation** | {{OBJET_MISSION}} |
+| **Intervenant(s) / Profil(s) affecté(s)** | {{INTERVENANTS_MISSION}} |
+| **Responsables désignés** | **Côté CLIENT :** {{CLIENT_RESPONSABLE_PROJET}} <br> **Côté PRESTATAIRE :** {{PRESTATAIRE_RESPONSABLE_MISSION}} |
+| **Lieu d'exécution** | {{MODALITE_LIEU_EXECUTION}} |
+| **Dates et volume prévisionnel** | **Date de début :** {{DATE_DEBUT}} <br> **Date de fin prévisionnelle :** {{DATE_FIN}} <br> **Volume estimé :** {{JOURS_ESTIMES}} jours |
+| **Conditions financières** | **Tarif journalier :** {{TJM_HT}} € HT / jour <br> **Frais refacturables :** {{FRAIS_REFACTURABLES}} |
+| **Conditions particulières additionnelles** | {{CONDITIONS_PARTICULIERES}} |
 
-Fait à **[Ville]**, le **[Date]**, en deux (2) exemplaires originaux *(ou signé électroniquement)*.
+Fait à **{{VILLE_SIGNATURE}}**, le **{{DATE_ANNEXE_SIGNATURE}}**, en deux (2) exemplaires originaux *(ou signé électroniquement)*.
 
-| Pour le **PRESTATAIRE** | Pour le **CLIENT** |
+| Pour le **PRESTATAIRE** ({{PRESTATAIRE_NOM}}) | Pour le **CLIENT** ({{CLIENT_RAISON_SOCIALE}}) |
 | :--- | :--- |
-| *Nom et qualité :* | *Nom et qualité :* |
+| *Nom et qualité :* {{PRESTATAIRE_REPRESENTANT}} — {{PRESTATAIRE_REPRESENTANT_FONCTION}} | *Nom et qualité :* {{CLIENT_REPRESENTANT}} — {{CLIENT_REPRESENTANT_FONCTION}} |
 | *Signature :* | *Signature :* |
