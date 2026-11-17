@@ -1,8 +1,9 @@
+> ⚠️ **Avertissement :** Modèle fourni à titre purement informatif (droit français). Il ne constitue pas un conseil juridique ; faites-le relire par un professionnel du droit avant signature.
+
 > **Instructions d'utilisation (à supprimer avant envoi) :**
 > - Contrat adapté à un **Freelance en Assistance Technique (A.T.)** facturé à la journée (régie).
 > - Basé sur [assistance-technique.md](assistance-technique.md).
-> - Remplacez **PRESTATAIRE** par votre nom / celui de votre société, et **CLIENT** par le nom de la société cliente.
-> - Remplacez chaque **XXXX** et champ entre crochets `[...]` par les valeurs négociées avec le CLIENT.
+> - Utilisez `python3 scripts/generate.py` ou remplacez chaque variable `{{...}}` par les valeurs négociées avec le CLIENT.
 
 ---
 
@@ -10,12 +11,12 @@
 
 **Entre les soussignés :**
 
-La société **[Nom de la société cliente]**, [forme juridique, ex : SAS / SARL] au capital de **[XXXX €]**, dont le siège social est situé au **[Adresse complète]**, immatriculée au Registre du Commerce et des Sociétés de **[Ville]** sous le numéro **[Numéro RCS / SIREN]**, représentée par **[M./Mme Nom et Prénom]**, en qualité de **[Fonction]**, dûment habilité(e) aux fins des présentes,  
+La société **{{CLIENT_RAISON_SOCIALE}}**, {{CLIENT_FORME_JURIDIQUE}} au capital de **{{CLIENT_CAPITAL_EUR}} €**, dont le siège social est situé au **{{CLIENT_ADRESSE}}**, immatriculée au Registre du Commerce et des Sociétés de **{{CLIENT_RCS_VILLE}}** sous le numéro **{{CLIENT_SIREN}}**, représentée par **{{CLIENT_REPRESENTANT}}**, en qualité de **{{CLIENT_REPRESENTANT_FONCTION}}**, dûment habilité(e) aux fins des présentes,  
 *(ci-après désignée « **le CLIENT** »)*,
 
 **d'une part, et**
 
-**[Nom de la société ou Prénom Nom de l'entrepreneur individuel]**, [forme juridique, ex : SASU / EURL / Entrepreneur Individuel], dont le siège social / domicile professionnel est situé au **[Adresse complète]**, immatriculé(e) sous le numéro SIRET **[Numéro SIRET]** [et au RCS/RNE de Ville sous le numéro ... le cas échéant], représenté(e) par **[M./Mme Nom et Prénom]**, en qualité de **[Fonction / Dirigeant]**,  
+**{{PRESTATAIRE_NOM}}**, {{PRESTATAIRE_FORME_JURIDIQUE}}, dont le siège social / domicile professionnel est situé au **{{PRESTATAIRE_ADRESSE}}**, immatriculé(e) sous le numéro SIRET **{{PRESTATAIRE_SIRET}}** *(immatriculation complémentaire RCS/RNE le cas échéant : {{PRESTATAIRE_IMMATRICULATION_COMPLEMENT}})*, représenté(e) par **{{PRESTATAIRE_REPRESENTANT}}**, en qualité de **{{PRESTATAIRE_REPRESENTANT_FONCTION}}**,  
 *(ci-après désigné(e) « **le PRESTATAIRE** »)*,
 
 **d'autre part,**
@@ -28,7 +29,7 @@ La société **[Nom de la société cliente]**, [forme juridique, ex : SAS / SAR
 
 ## Article 1 – Objet et nature de la mission
 
-Le présent contrat a pour objet la réalisation par le PRESTATAIRE d'une mission d'assistance technique informatique pour le compte du CLIENT, portant sur : **[décrire brièvement l'objet de la mission : XXXX]**.
+Le présent contrat a pour objet la réalisation par le PRESTATAIRE d'une mission d'assistance technique informatique pour le compte du CLIENT, portant sur : **{{OBJET_MISSION}}**.
 
 Les obligations du PRESTATAIRE consistent à faire bénéficier le CLIENT de sa compétence et de son savoir-faire technique dans le cadre des projets informatiques de ce dernier. À ce titre, le PRESTATAIRE est soumis à une **obligation de moyens**.
 
@@ -44,11 +45,11 @@ Le présent contrat est exclusif de toute mise à disposition de personnel entra
 
 ## Article 2 – Durée et volume de prestation
 
-La mission débute le **XXXX** et se termine le **XXXX** inclus.
+La mission débute le **{{DATE_DEBUT}}** et se termine le **{{DATE_FIN}}** inclus.
 
-Durant cette période, le PRESTATAIRE s'engage à fournir entre **XXXX** et **XXXX** jours de prestation. Ce volume pourra être ajusté par écrit (avenant ou échange d'e-mails formel) d'un commun accord entre les Parties.
+Durant cette période, le PRESTATAIRE s'engage à fournir entre **{{JOURS_MIN}}** et **{{JOURS_MAX}}** jours de prestation. Ce volume pourra être ajusté par écrit (avenant ou échange d'e-mails formel) d'un commun accord entre les Parties.
 
-À la fin de chaque mois, le PRESTATAIRE établit un Compte Rendu d'Activité (CRA) récapitulant le nombre de jours réalisés, soumis à la validation du CLIENT. Sans retour motivé du CLIENT sous **[5 jours ouvrés]** suivant l'envoi du CRA, celui-ci est réputé validé.
+À la fin de chaque mois, le PRESTATAIRE établit un Compte Rendu d'Activité (CRA) récapitulant le nombre de jours réalisés, soumis à la validation du CLIENT. Sans retour motivé du CLIENT sous **{{DELAI_VALIDATION_CRA_JOURS}} jours ouvrés** suivant l'envoi du CRA, celui-ci est réputé validé.
 
 ---
 
@@ -56,7 +57,7 @@ Durant cette période, le PRESTATAIRE s'engage à fournir entre **XXXX** et **XX
 
 Le PRESTATAIRE exerce son activité en toute indépendance. Il conserve une entière autonomie dans l'organisation de son travail et de son emploi du temps, sans aucun lien de subordination juridique ou hiérarchique vis-à-vis du CLIENT.
 
-La mission sera exécutée : **[au choix : dans les locaux du CLIENT / en télétravail depuis les locaux du PRESTATAIRE / selon une organisation hybride de XXXX jours par semaine sur site et XXXX jours à distance]**.
+La mission sera exécutée selon les modalités suivantes : **{{MODALITE_LIEU_EXECUTION}}** *(ex : dans les locaux du CLIENT / en télétravail / hybride X jours sur site et Y jours à distance)*.
 
 Lorsque le PRESTATAIRE intervient dans les locaux du CLIENT, il s'engage à respecter les règles d'hygiène, de sécurité et de sûreté applicables sur le site, ainsi que les plages horaires d'ouverture des locaux, sans que cela puisse être interprété comme une soumission au pouvoir de direction du CLIENT.
 
@@ -64,7 +65,7 @@ Lorsque le PRESTATAIRE intervient dans les locaux du CLIENT, il s'engage à resp
 
 ## Article 4 – Attestations réglementaires et assurances
 
-Conformément aux articles L. 8222-1 et D. 8222-5 du Code du travail relatifs à l'obligation de vigilance et à la lutte contre le travail dissimulé (pour tout contrat d'un montant global au moins égal à 5 000 € HT), le PRESTATAIRE s'engage à remettre au CLIENT, à la signature du présent contrat puis tous les six (6) mois jusqu'à son terme, sur demande :
+Conformément aux articles L. 8222-1 et D. 8222-5 du Code de travail relatifs à l'obligation de vigilance et à la lutte contre le travail dissimulé (pour tout contrat d'un montant global au moins égal à 5 000 € HT), le PRESTATAIRE s'engage à remettre au CLIENT, à la signature du présent contrat puis tous les six (6) mois jusqu'à son terme, sur demande :
 - une attestation de fourniture des déclarations sociales et de paiement des cotisations (attestation de vigilance URSSAF) datant de moins de six (6) mois ;
 - un justificatif d'immatriculation à jour (extrait Kbis, avis de situation SIRENE ou extrait du Registre National des Entreprises).
 
@@ -74,7 +75,7 @@ Le PRESTATAIRE déclare être titulaire d'une assurance de Responsabilité Civil
 
 ## Article 5 – Conditions financières
 
-Le prix de la prestation est fixé selon un tarif journalier de **XXXX € hors taxes (HT)**.
+Le prix de la prestation est fixé selon un tarif journalier de **{{TJM_HT}} € hors taxes (HT)**.
 
 Ce montant sera majoré de la TVA au taux légal en vigueur au jour de la facturation *(ou mention « TVA non applicable, art. 293 B du CGI » si le PRESTATAIRE bénéficie de la franchise en base de TVA)*.
 
@@ -88,7 +89,7 @@ Toute prestation complémentaire non prévue au présent contrat donnera lieu à
 
 La facturation est établie mensuellement, en fin de mois, sur la base du Compte Rendu d'Activité (CRA) validé et joint à la facture.
 
-Le règlement s'effectuera par virement bancaire dans un délai de **XXXX jours** *(maximum légal entre professionnels : 60 jours ou 45 jours fin de mois à compter de la date d'émission de la facture, ou 45 jours pour les factures périodiques)* à compter de la date d'émission de la facture.
+Le règlement s'effectuera par virement bancaire dans un délai de **{{DELAI_PAIEMENT_JOURS}} jours** *(maximum légal entre professionnels : 60 jours ou 45 jours fin de mois à compter de la date d'émission de la facture, ou 45 jours pour les factures périodiques)* à compter de la date d'émission de la facture.
 
 Conformément aux articles L. 441-10 et D. 441-5 du Code de commerce, tout retard de paiement entraîne de plein droit, le jour suivant la date d'échéance figurant sur la facture et sans qu'un rappel soit nécessaire :
 - l'application de pénalités de retard calculées au taux d'intérêt appliqué par la Banque Centrale Européenne (BCE) à son opération de refinancement la plus récente majoré de 10 points de pourcentage *(taux minimum légal : 3 fois le taux d'intérêt légal)* ;
@@ -120,7 +121,7 @@ Chaque Partie s'interdit de divulguer à des tiers tout ou partie de ces informa
 
 Chaque Partie se porte fort, au sens de l'article 1204 du Code civil, du respect du présent engagement de confidentialité par ses salariés, dirigeants, mandataires ou sous-traitants dûment autorisés.
 
-Cet engagement de confidentialité restera en vigueur pendant toute la durée du contrat et pour une durée de **XXXX ans** *(ex : 2 ou 5 ans)* après son expiration ou sa résiliation.
+Cet engagement de confidentialité restera en vigueur pendant toute la durée du contrat et pour une durée de **{{DUREE_CONFIDENTIALITE_ANS}} ans** *(ex : 2 ou 5 ans)* après son expiration ou sa résiliation.
 
 ---
 
@@ -130,7 +131,7 @@ Le PRESTATAIRE étant soumis à une obligation de moyens, sa responsabilité ne 
 
 En aucun cas, le PRESTATAIRE ne pourra être tenu responsable des dommages indirects subis par le CLIENT (tels que perte de chiffre d'affaires, perte de chance, perte de données, préjudice commercial ou d'image).
 
-En tout état de cause, si la responsabilité du PRESTATAIRE venait à être retenue, le montant total des indemnités et dommages-intérêts qu'il pourrait être amené à verser au CLIENT, toutes causes confondues, est expressément plafonné au montant total des honoraires HT effectivement perçus par le PRESTATAIRE au titre du présent contrat *(ou au cours des XXXX derniers mois)*.
+En tout état de cause, si la responsabilité du PRESTATAIRE venait à être retenue, le montant total des indemnités et dommages-intérêts qu'il pourrait être amené à verser au CLIENT, toutes causes confondues, est expressément plafonné au montant total des honoraires HT effectivement perçus par le PRESTATAIRE au titre du présent contrat *(ou au cours des {{DUREE_PLAFOND_RESPONSABILITE_MOIS}} derniers mois)*.
 
 ---
 
@@ -143,9 +144,9 @@ Sauf accord écrit et préalable de l'autre Partie, le présent contrat est conc
 ## Article 11 – Renouvellement et résiliation
 
 ### 11.1 Résiliation pour convenance
-Le présent contrat pourra être résilié de manière anticipée par le CLIENT moyennant un préavis écrit de **XXXX jours**. Si le CLIENT dispense le PRESTATAIRE d'exécuter sa prestation pendant tout ou partie de la durée du préavis, le CLIENT s'engage néanmoins à régler l'intégralité des jours ouvrés couverts par ce préavis au tarif journalier convenu.
+Le présent contrat pourra être résilié de manière anticipée par le CLIENT moyennant un préavis écrit de **{{PREAVIS_CLIENT_JOURS}} jours**. Si le CLIENT dispense le PRESTATAIRE d'exécuter sa prestation pendant tout ou partie de la durée du préavis, le CLIENT s'engage néanmoins à régler l'intégralité des jours ouvrés couverts par ce préavis au tarif journalier convenu.
 
-Le présent contrat pourra être résilié par le PRESTATAIRE moyennant un préavis écrit de **XXXX jours**, sans indemnité ni compensation financière. Le PRESTATAIRE s'engage à poursuivre sa prestation de bonne foi pendant la durée du préavis.
+Le présent contrat pourra être résilié par le PRESTATAIRE moyennant un préavis écrit de **{{PREAVIS_PRESTATAIRE_JOURS}} jours**, sans indemnité ni compensation financière. Le PRESTATAIRE s'engage à poursuivre sa prestation de bonne foi pendant la durée du préavis.
 
 La durée de ces préavis pourra être réduite d'un commun accord écrit entre les Parties.
 
@@ -153,7 +154,7 @@ La durée de ces préavis pourra être réduite d'un commun accord écrit entre 
 En cas de manquement grave d'une des Parties à ses obligations contractuelles (notamment en cas de non-paiement des factures par le CLIENT), l'autre Partie pourra résilier le contrat de plein droit quinze (15) jours après l'envoi d'une mise en demeure par lettre recommandée avec accusé de réception (LRAR) restée infructueuse.
 
 ### 11.3 Renouvellement
-Le présent contrat pourra être renouvelé par accord écrit des deux Parties (avenant ou nouveau bon de commande) au plus tard **XXXX jours** avant son échéance.
+Le présent contrat pourra être renouvelé par accord écrit des deux Parties (avenant ou nouveau bon de commande) au plus tard **{{DELAI_RENOUVELLEMENT_JOURS}} jours** avant son échéance.
 
 ---
 
@@ -161,14 +162,14 @@ Le présent contrat pourra être renouvelé par accord écrit des deux Parties (
 
 Le présent contrat est régi par le droit français.
 
-En cas de différend relatif à l'interprétation, l'exécution ou la résiliation du présent contrat, les Parties s'efforceront de trouver une solution amiable. À défaut d'accord dans un délai de trente (30) jours, le litige sera soumis à la compétence exclusive du **Tribunal de commerce de XXXX** *(généralement la ville du siège social de l'une des parties)*.
+En cas de différend relatif à l'interprétation, l'exécution ou la résiliation du présent contrat, les Parties s'efforceront de trouver une solution amiable. À défaut d'accord dans un délai de trente (30) jours, le litige sera soumis à la compétence exclusive du **Tribunal de commerce de {{TRIBUNAL_COMPETENT}}**.
 
 ---
 
 Fait en deux (2) exemplaires originaux (ou signé électroniquement),  
-À **XXXX**, le **XXXX**.
+À **{{VILLE_SIGNATURE}}**, le **{{DATE_SIGNATURE}}**.
 
-| Pour le **PRESTATAIRE** | Pour le **CLIENT** |
+| Pour le **PRESTATAIRE** ({{PRESTATAIRE_NOM}}) | Pour le **CLIENT** ({{CLIENT_RAISON_SOCIALE}}) |
 | :--- | :--- |
-| *Nom et qualité :* | *Nom et qualité :* |
+| *Nom et qualité :* {{PRESTATAIRE_REPRESENTANT}} — {{PRESTATAIRE_REPRESENTANT_FONCTION}} | *Nom et qualité :* {{CLIENT_REPRESENTANT}} — {{CLIENT_REPRESENTANT_FONCTION}} |
 | *Signature :* | *Signature :* |
