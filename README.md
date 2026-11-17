@@ -1,5 +1,3 @@
-###### 💡 Astuce finale pour tes 5 modèles historiques. Pense à remplacer progressivement les champs variables dans tes 5 anciens fichiers (assistance-technique-freelance.md, prestation-generique.md, assistance-technique.md, contrat-service.md, maintenance-informatique.md) par le format {{VARIABLE}} (ex: {{PRESTATAIRE_NOM}}, {{CLIENT_RAISON_SOCIALE}}, {{TJM_HT}}, {{DATE_DEBUT}}) : ils deviendront immédiatement compatibles avec scripts/generate.py !
-
 <div align="center">
 
 # 📄 ContratModele
