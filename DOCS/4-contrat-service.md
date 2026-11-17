@@ -1,6 +1,8 @@
+> ⚠️ **Avertissement :** Modèle fourni à titre purement informatif (droit français). Il ne constitue pas un conseil juridique ; faites-le relire par un professionnel du droit avant signature.
+
 > **Note d'utilisation (à supprimer avant envoi) :**
 > - Contrat de prestation de conseil / service **au forfait et par phases** entre deux sociétés B2B, avec cahier des charges en annexe.
-> - Remplacez les champs entre crochets `[...]` par les valeurs convenues et ne conservez que l'option choisie là où plusieurs choix sont proposés (ex : Sous-traitance).
+> - Utilisez `python3 scripts/generate.py` ou remplacez chaque variable `{{...}}` par les valeurs convenues, et ne conservez que l'option choisie là où plusieurs choix sont proposés (ex : Sous-traitance).
 
 ---
 
@@ -8,14 +10,14 @@
 
 **Entre les soussignés :**
 
-La société **[Nom de la société cliente]**, [forme juridique, ex : SAS / SARL] au capital de **[Montant €]**, dont le siège social est situé **[Adresse complète]**, immatriculée au Registre du Commerce et des Sociétés de **[Ville]** sous le numéro **[Numéro RCS / SIREN]**, représentée par **[M./Mme Prénom et Nom]**, en qualité de **[Fonction]**, dûment habilité(e) aux fins des présentes,  
+La société **{{CLIENT_RAISON_SOCIALE}}**, {{CLIENT_FORME_JURIDIQUE}} au capital de **{{CLIENT_CAPITAL_EUR}} €**, dont le siège social est situé **{{CLIENT_ADRESSE}}**, immatriculée au Registre du Commerce et des Sociétés de **{{CLIENT_RCS_VILLE}}** sous le numéro **{{CLIENT_SIREN}}**, représentée par **{{CLIENT_REPRESENTANT}}**, en qualité de **{{CLIENT_REPRESENTANT_FONCTION}}**, dûment habilité(e) aux fins des présentes,  
 *(ci-après dénommée « **le Client** »)*,
 
 **d'une part,**
 
 **et**
 
-La société **[Nom de la société prestataire]**, [forme juridique, ex : SAS / SASU / SARL / EURL] au capital de **[Montant €]**, dont le siège social est situé **[Adresse complète]**, immatriculée au Registre du Commerce et des Sociétés de **[Ville]** sous le numéro **[Numéro RCS / SIREN]**, représentée par **[M./Mme Prénom et Nom]**, en qualité de **[Fonction]**, dûment habilité(e) aux fins des présentes,  
+La société **{{PRESTATAIRE_NOM}}**, {{PRESTATAIRE_FORME_JURIDIQUE}} au capital de **{{PRESTATAIRE_CAPITAL_EUR}} €**, dont le siège social est situé **{{PRESTATAIRE_ADRESSE}}**, immatriculée au Registre du Commerce et des Sociétés de **{{PRESTATAIRE_RCS_VILLE}}** sous le numéro **{{PRESTATAIRE_SIREN}}**, représentée par **{{PRESTATAIRE_REPRESENTANT}}**, en qualité de **{{PRESTATAIRE_REPRESENTANT_FONCTION}}**, dûment habilité(e) aux fins des présentes,  
 *(ci-après dénommée « **le Prestataire** »)*,
 
 **d'autre part,**
@@ -26,7 +28,7 @@ La société **[Nom de la société prestataire]**, [forme juridique, ex : SAS /
 
 ## Préambule
 
-*[Rappeler ici, en quelques lignes, le contexte du projet et les raisons qui motivent l'accord intervenu entre les Parties. Ce préambule fait partie intégrante du contrat et pourra servir à son interprétation en cas de besoin.]*
+{{CONTEXTE_PREAMBULE}} *(rappeler ici, en quelques lignes, le contexte du projet et les raisons qui motivent l'accord intervenu entre les Parties ; ce préambule fait partie intégrante du contrat et pourra servir à son interprétation en cas de besoin).*
 
 **Ceci exposé, il a été convenu ce qui suit :**
 
@@ -40,25 +42,25 @@ Le présent contrat est un contrat de prestation de conseil et de services infor
 
 ## Article 2 – Durée
 
-Le présent contrat est conclu pour une durée de **[durée, ex : 6 mois / 1 an / pour la durée nécessaire à l'exécution de la mission]**. Il prend effet le **[Date de début]** et arrivera à son terme prévisionnel le **[Date de fin]**, sauf prolongation ou résiliation anticipée dans les conditions prévues aux présentes.
+Le présent contrat est conclu pour une durée de **{{DUREE_MISSION}}** *(ex : 6 mois / 1 an / pour la durée nécessaire à l'exécution de la mission)*. Il prend effet le **{{DATE_DEBUT}}** et arrivera à son terme prévisionnel le **{{DATE_FIN}}**, sauf prolongation ou résiliation anticipée dans les conditions prévues aux présentes.
 
 ---
 
 ## Article 3 – Conditions financières
 
 ### 3.1 Prix forfaitaire et échéancier
-En contrepartie de la réalisation des prestations définies à l'Article 1, le Client versera au Prestataire la somme forfaitaire de **[Montant] euros hors taxes (€ HT)**, majorée de la TVA au taux légal en vigueur au jour de la facturation *(ou mention « TVA non applicable, art. 293 B du CGI » le cas échéant)*.
+En contrepartie de la réalisation des prestations définies à l'Article 1, le Client versera au Prestataire la somme forfaitaire de **{{MONTANT_FORFAIT_HT}} euros hors taxes (€ HT)**, majorée de la TVA au taux légal en vigueur au jour de la facturation *(ou mention « TVA non applicable, art. 293 B du CGI » le cas échéant)*.
 
 Sauf stipulation différente au cahier des charges, ce montant est ventilé selon l'échéancier suivant :
 - **20 %** à la signature des présentes *(acompte de démarrage)* ;
-- **30 %** à l'issue de **[la phase intermédiaire / validation du pré-rapport / à J+X suivant la signature]** ;
+- **30 %** à l'issue de **{{JALON_ECHEANCE_2}}** *(ex : la phase intermédiaire / validation du pré-rapport / à J+X suivant la signature)* ;
 - **50 %** constituant le solde, à la réception définitive des livrables finaux.
 
 ### 3.2 Frais annexes
 Les frais de déplacement, d'hébergement, de restauration et frais spécifiques engagés par le Prestataire et strictement nécessaires à l'exécution de la prestation en dehors de ses locaux seront facturés en sus au Client, au réel et sur présentation de justificatifs, sous réserve de l'accord préalable et écrit du Client.
 
 ### 3.3 Modalités de règlement et pénalités de retard
-Les factures sont payables par virement bancaire dans un délai de **[30 jours]** à compter de leur date d'émission *(dans les limites légales prévues à l'article L. 441-10 du Code de commerce : 60 jours ou 45 jours fin de mois maximum)*.
+Les factures sont payables par virement bancaire dans un délai de **{{DELAI_PAIEMENT_JOURS}} jours** à compter de leur date d'émission *(dans les limites légales prévues à l'article L. 441-10 du Code de commerce : 60 jours ou 45 jours fin de mois maximum)*.
 
 Conformément aux articles L. 441-10 et D. 441-5 du Code de commerce, tout retard de paiement entraîne de plein droit, dès le jour suivant la date d'échéance et sans qu'un rappel soit nécessaire :
 - l'exigibilité de pénalités de retard calculées au taux d'intérêt appliqué par la Banque Centrale Européenne (BCE) à son opération de refinancement la plus récente majoré de 10 points de pourcentage *(sans pouvoir être inférieur à 3 fois le taux d'intérêt légal)* ;
@@ -71,24 +73,24 @@ En outre, en cas de non-paiement persistant huit (8) jours après mise en demeur
 ## Article 4 – Exécution de la prestation
 
 ### 4.1 Moyens mis en œuvre
-Le Prestataire s'engage à mener à bien la mission précisée à l'Article 1, conformément aux règles de l'art et en toute indépendance dans l'organisation de ses moyens. À cet effet, il affecte l'équipe ou les compétences nécessaires à la réalisation de la mission et remet, avant le rapport ou livrable final, une pré-étude au plus tard le **[Date]**.
+Le Prestataire s'engage à mener à bien la mission précisée à l'Article 1, conformément aux règles de l'art et en toute indépendance dans l'organisation de ses moyens. À cet effet, il affecte l'équipe ou les compétences nécessaires à la réalisation de la mission et remet, avant le rapport ou livrable final, une pré-étude au plus tard le **{{DATE_PRE_ETUDE}}**.
 
 ### 4.2 Obligation de collaboration du Client
-Le Client tiendra à la disposition du Prestataire toutes les informations, données et accès pouvant contribuer à la bonne réalisation de l'objet du présent contrat. À cette fin, le Client désigne un ou plusieurs interlocuteurs privilégiés : **[M./Mme Nom(s) et fonction(s)]**, investis du pouvoir de décision pour assurer le suivi et la validation des diverses étapes de la mission.
+Le Client tiendra à la disposition du Prestataire toutes les informations, données et accès pouvant contribuer à la bonne réalisation de l'objet du présent contrat. À cette fin, le Client désigne un ou plusieurs interlocuteurs privilégiés : **{{CLIENT_INTERLOCUTEUR_PROJET}}**, investis du pouvoir de décision pour assurer le suivi et la validation des diverses étapes de la mission.
 
 *(Facultatif :)* Pour les besoins stricts de la mission, le Client accorde au Prestataire un accès contrôlé et sécurisé aux systèmes et catégories d'informations définis au cahier des charges, dans le respect des règles de sécurité et de confidentialité convenues.
 
 ### 4.3 Validation des étapes et réception
-À la date prévue pour chaque jalon *(et notamment à la remise du pré-rapport prévue le **[Date]**)*, le Client procède à la vérification des travaux remis. Le Client dispose d'un délai de **[10 jours ouvrés]** à compter de la remise du livrable pour formuler par écrit ses réserves motivées ou prononcer sa validation expresse afin que la phase suivante puisse recevoir exécution. À défaut de réponse motivée dans ce délai, le livrable est réputé validé.
+À la date prévue pour chaque jalon *(et notamment à la remise du pré-rapport prévue le **{{DATE_LIVRABLE_INTERMEDIAIRE}}**)*, le Client procède à la vérification des travaux remis. Le Client dispose d'un délai de **{{DELAI_RECETTE_JOURS}} jours ouvrés** à compter de la remise du livrable pour formuler par écrit ses réserves motivées ou prononcer sa validation expresse afin que la phase suivante puisse recevoir exécution. À défaut de réponse motivée dans ce délai, le livrable est réputé validé.
 
 ---
 
 ## Article 5 – Calendrier et délais
 
 Sous réserve du respect par le Client de ses obligations de collaboration et de validation dans les délais convenus à l'Article 4, le calendrier prévisionnel de la mission est le suivant :
-- **Phase 1** (définie au cahier des charges) : achèvement au plus tard le **[Date]** ;
-- **Phase 2** (assortie de la remise du pré-rapport) : achèvement au plus tard le **[Date]** ;
-- **Phase 3** (livrables finaux / rapport terminal) : délivrance au plus tard le **[Date]**.
+- **Phase 1** (définie au cahier des charges) : achèvement au plus tard le **{{DATE_PHASE_1}}** ;
+- **Phase 2** (assortie de la remise du pré-rapport) : achèvement au plus tard le **{{DATE_PHASE_2}}** ;
+- **Phase 3** (livrables finaux / rapport terminal) : délivrance au plus tard le **{{DATE_PHASE_3}}**.
 
 Tout retard imputable au Client dans la fourniture des informations, accès ou validations entraînera de plein droit un report équivalent des échéances du calendrier ci-dessus.
 
@@ -124,7 +126,7 @@ Toutefois, aucune des Parties ne saurait être tenue responsable de la divulgati
 - ont été obtenus de tiers de manière légitime et sans obligation de confidentialité ;
 - doivent être communiqués en vertu d'une obligation légale ou d'une décision judiciaire.
 
-La présente obligation perdurera pendant toute la durée du contrat et pendant **[cinq (5) ans]** après son terme ou sa résiliation.
+La présente obligation perdurera pendant toute la durée du contrat et pendant **{{DUREE_CONFIDENTIALITE_ANS}} ans** *(ex : 5 ans)* après son terme ou sa résiliation.
 
 ---
 
@@ -140,9 +142,9 @@ La présente cession ne porte pas sur les méthodes, outils, savoir-faire géné
 
 ## Article 10 – Pénalités de retard *(Clause facultative)*
 
-En cas de dépassement des délais impératifs stipulés à l'Article 5 exclusivement imputable au Prestataire *(à l'exclusion de tout retard du Client ou cas de force majeure)*, le Client pourra appliquer, après mise en demeure restée infructueuse pendant huit (8) jours, une pénalité forfaitaire de **[Montant € — ex : 0,5 % du montant HT de la phase en retard]** par jour calendaire de retard.
+En cas de dépassement des délais impératifs stipulés à l'Article 5 exclusivement imputable au Prestataire *(à l'exclusion de tout retard du Client ou cas de force majeure)*, le Client pourra appliquer, après mise en demeure restée infructueuse pendant huit (8) jours, une pénalité forfaitaire de **{{PENALITE_RETARD_JOURNALIERE}}** *(ex : 0,5 % du montant HT de la phase en retard)* par jour calendaire de retard.
 
-De convention expresse entre les Parties, le montant cumulé des pénalités de retard ne pourra en aucun cas excéder **[5 % ou 10 %]** du montant total HT du contrat.
+De convention expresse entre les Parties, le montant cumulé des pénalités de retard ne pourra en aucun cas excéder **{{PLAFOND_PENALITES_RETARD_PCT}} %** *(ex : 5 ou 10)* du montant total HT du contrat.
 
 ---
 
@@ -150,7 +152,7 @@ De convention expresse entre les Parties, le montant cumulé des pénalités de 
 
 *(Ne conserver qu'une seule des deux options ci-dessous et supprimer l'autre :)*
 
-- **Option A (Sous-traitance autorisée pour un tiers identifié) :** Les tâches précisées à l'Article 1 concernant **[les phases 1, 2 et/ou 3 — ou telle partie spécifique]** pourront être exécutées par la société **[Nom du sous-traitant]**, en qualité de sous-traitant, ce que reconnaît et accepte expressément le Client. Le Prestataire demeure seul responsable envers le Client de la bonne exécution des prestations sous-traitées. Toute autre sous-traitance est soumise à l'accord écrit préalable du Client.
+- **Option A (Sous-traitance autorisée pour un tiers identifié) :** Les tâches précisées à l'Article 1 concernant **{{PHASES_SOUS_TRAITEES}}** pourront être exécutées par la société **{{SOUS_TRAITANT_NOM}}**, en qualité de sous-traitant, ce que reconnaît et accepte expressément le Client. Le Prestataire demeure seul responsable envers le Client de la bonne exécution des prestations sous-traitées. Toute autre sous-traitance est soumise à l'accord écrit préalable du Client.
 - **Option B (Sous-traitance interdite sauf accord) :** Le présent contrat étant conclu *intuitu personae*, le Prestataire s'interdit de sous-traiter à quiconque tout ou partie de la réalisation des travaux définis à l'Article 1 sans l'accord préalable et écrit du Client.
 
 ---
@@ -183,15 +185,15 @@ La Partie qui constate un cas de force majeure doit en informer l'autre Partie p
 
 Le présent contrat est régi par le **droit français**. Le texte rédigé en langue **française** fait foi comme texte original.
 
-En cas de contestation ou de différend découlant du présent contrat ou s'y rapportant, les Parties s'efforceront de trouver une solution amiable dans un délai de trente (30) jours. À défaut d'accord amiable, tout litige relatif à sa validité, son interprétation, son exécution ou sa résiliation sera soumis à la compétence exclusive du **Tribunal de commerce de [Ville]**.
+En cas de contestation ou de différend découlant du présent contrat ou s'y rapportant, les Parties s'efforceront de trouver une solution amiable dans un délai de trente (30) jours. À défaut d'accord amiable, tout litige relatif à sa validité, son interprétation, son exécution ou sa résiliation sera soumis à la compétence exclusive du **Tribunal de commerce de {{TRIBUNAL_COMPETENT}}**.
 
 *(Note : Pour des contrats internationaux de montant très élevé, cette clause peut être remplacée par une clause d'arbitrage CCI.)*
 
 ---
 
-Fait à **[Ville]**, le **[Date]**, en **deux (2)** exemplaires originaux *(ou signé électroniquement)*.
+Fait à **{{VILLE_SIGNATURE}}**, le **{{DATE_SIGNATURE}}**, en **deux (2)** exemplaires originaux *(ou signé électroniquement)*.
 
-| Pour le **Prestataire** | Pour le **Client** |
+| Pour le **Prestataire** ({{PRESTATAIRE_NOM}}) | Pour le **Client** ({{CLIENT_RAISON_SOCIALE}}) |
 | :--- | :--- |
-| *Nom et qualité :* | *Nom et qualité :* |
+| *Nom et qualité :* {{PRESTATAIRE_REPRESENTANT}} — {{PRESTATAIRE_REPRESENTANT_FONCTION}} | *Nom et qualité :* {{CLIENT_REPRESENTANT}} — {{CLIENT_REPRESENTANT_FONCTION}} |
 | *Signature :* | *Signature :* |
