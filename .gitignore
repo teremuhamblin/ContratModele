@@ -1,0 +1,21 @@
+# Contrats générés et exports locaux (ne jamais commiter de données clients !)
+output/
+*.pdf
+*.docx
+*.odt
+*.html
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Éditeurs / IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
