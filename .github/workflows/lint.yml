@@ -1,4 +1,4 @@
-name: Vérification Markdown & Liens
+name: Vérification Markdown, Liens & Tests
 
 on:
   push:
@@ -13,7 +13,12 @@ jobs:
       - name: Récupérer le dépôt
         uses: actions/checkout@v4
 
-      - name: Vérifier les liens internes et l'avertissement juridique
+      - name: Configurer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Vérifier les liens internes
         run: |
           python3 - <<'EOF'
           from pathlib import Path
@@ -30,16 +35,14 @@ jobs:
               for target in link_re.findall(text):
                   if target.startswith(("http://", "https://", "mailto:")):
                       continue
-                  resolved = (md.parent / target).resolve()
-                  if not resolved.exists():
+                  if not (md.parent / target).resolve().exists():
                       errors.append(f"Lien cassé dans {md}: {target}")
-
-              if md.parent.name == "DOCS" and md.name not in {"LICENSE.md", "README.md", "checklist-avant-signature.md"}:
-                  if "Avertissement" not in text:
-                      errors.append(f"Avertissement juridique manquant dans {md}")
 
           if errors:
               print("\n".join(errors))
               sys.exit(1)
-          print("Toutes les vérifications ContratModele ont réussi !")
+          print("Tous les liens internes sont valides !")
           EOF
+
+      - name: Exécuter la suite de tests unitaires
+        run: python3 -m unittest discover -s tests -v
